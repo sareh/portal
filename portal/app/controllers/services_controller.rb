@@ -61,6 +61,14 @@ class ServicesController < ApplicationController
     end
   end
 
+  def tagged
+    if params[:tag].present?
+      @services = Service.tagged_with(params[:tag])
+    else
+      @services = Service.all  
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_service
