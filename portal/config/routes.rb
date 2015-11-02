@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :services
   resources :service_types
   devise_for :users
-  resources :users, only: [:index, :new, :show, :edit, :delete]
+  resources :users, only: [:index, :show]
 
   get 'tagged' => 'services#tagged', :as => 'tagged'
 
