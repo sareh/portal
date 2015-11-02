@@ -2,4 +2,11 @@ class Service < ActiveRecord::Base
   belongs_to :user
   belongs_to :service_type
   acts_as_taggable_on :tags
+
+  def self.unique_tags
+    Tag.all.uniq
+  end
+  def self.unique_sorted_tags
+    Tag.all.uniq.sort
+  end
 end
