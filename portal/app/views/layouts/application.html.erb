@@ -14,27 +14,42 @@
 
   <body>
     <header>
-      <nav>
-        <ul>
-          <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Services", services_path %></li>
-          <% if user_signed_in? %>
-            <li><%= link_to "Add a Service", new_service_path %></li>
-
-            <!-- The following 2 are for development. Won't be in prod-->
-            <li><%= link_to "Service Types", service_types_path %></li>
-            <li><%= link_to "Users", users_path %></li>
-            
-            <!-- I will float the following to the right -->
-            <li><%= link_to "My Profile", current_user %></li>
-            <li><%= link_to "Edit Profile", edit_user_registration_path %>
-            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-          <% else %>
-            <!-- I will float the following to the right -->
-            <li><%= link_to "Sign Up", new_user_registration_path %></li>
-            <li><%= link_to "Login", new_user_session_path %></li>  
-          <% end %>
+      <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+          <li class="name">
+            <h1><%= link_to "Portal", root_path %></h1>
+          </li>
+           <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
         </ul>
+
+        <section class="top-bar-section">
+          <!-- Right Nav Section -->
+          <ul class="right">
+            <% if user_signed_in? %>        
+              <!-- I will float the following to the right -->
+              <li><%= link_to "My Profile", current_user %></li>
+              <li><%= link_to "Edit Profile", edit_user_registration_path %>
+              <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <!-- I will float the following to the right -->
+              <li><%= link_to "Sign Up", new_user_registration_path %></li>
+              <li><%= link_to "Login", new_user_session_path %></li>  
+            <% end %>
+          </ul>
+
+          <!-- Left Nav Section -->
+          <ul class="left">
+            <li><%= link_to "Services", services_path %></li>
+            <% if user_signed_in? %>
+              <li><%= link_to "Add a Service", new_service_path %></li>
+
+              <!-- The following 2 are for development. Won't be in prod-->
+              <li><%= link_to "Service Types", service_types_path %></li>
+              <li><%= link_to "Users", users_path %></li>          
+            <% end %>
+          </ul>
+        </section>
       </nav>
     </header>
 
