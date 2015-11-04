@@ -4,8 +4,12 @@ class ServicesController < ApplicationController
 
   # GET /services
   # GET /services.json
-  def index
-    @services = Service.all
+  def index 
+    if params[:tags].present?
+      @services = Service.tagged_with(params[:tags])
+    else
+      @services = Service.all
+    end
   end
 
   # GET /services/1
