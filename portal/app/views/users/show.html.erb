@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<ul>
+  <li class="strong">Name:</li>
+  <li><%= @user.username %></li>
+  <li class="strong">Role:</li>
+  <li><%= @user.role %></li>
+</ul>
+<% if current_user.id == @user.id %>
+  <%= link_to 'Edit', edit_user_path(@user) %>
+<% end %>

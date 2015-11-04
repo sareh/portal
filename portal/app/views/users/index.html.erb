@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<% @users.each do |user| %>
+<ul class="no-bullet">
+  <li class="left"><%= user.username %></li>
+  <li class="right"><%= user.role %></li>
+  <li class="right"><%= link_to 'Edit', edit_user_path(user) %></li>
+  <li class="right"><%= link_to 'Delete', destroy_user_path(user) %></li>
+</ul>
+<% end %>
+
