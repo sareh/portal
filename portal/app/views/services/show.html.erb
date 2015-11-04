@@ -10,7 +10,7 @@
 <section class="row">  
   <% if @service.image != "" %>      
     <div class="image-container small-12 medium-8 medium-offset-2 medium-centered columns padding-0 margin-0">
-      <%= image_tag @service.image, alt: "Image representing #{@service.name}", class: "width-100" %>
+      <%= image_tag @service.image.url, alt: "Image representing #{@service.name}", class: "width-100" %>
     </div>
   <% end %>
 </section>
