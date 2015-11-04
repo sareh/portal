@@ -26,3 +26,11 @@ s2 = u_admin1.services.create!(name: "Gower Place Practice", image: "Polar-bear-
   You can book and cancel appointments, order repeat prescriptions and view a summary of your medical record (including medications, immunisations and allergies). You can also update your personal contact details.
 
   Anyone living in WC1 can register with the practice.", service_type_id: st_external.id)
+
+s1.tag_list = "mental health"
+s1.save
+s1.reload!
+
+s2.tag_list = "physical health"
+s2.save
+s2.reload!
