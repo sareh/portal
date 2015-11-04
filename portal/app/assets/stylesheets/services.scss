@@ -1,3 +1,31 @@
-// Place all the styles related to the Services controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#homepage-banner-img {
+  @include box-background-with-image("uclatnight.jpg");
+
+  #homepage-title {
+    $box-opacity-homepage-title: 0.6;
+    $box-padding-tb: 20px;
+    $box-padding-lr: 30px;
+
+    @include box-in-center($black, $box-opacity-homepage-title, $box-padding-tb, $box-padding-lr);
+    
+    h2 {
+      color: $white;
+    }
+  }
+}
+
+.university-box {
+  @include my-service-box($university-base-color);
+}
+
+.union-box {
+  @include my-service-box($union-base-color);
+}
+
+.studentgroup-box {
+  @include my-service-box($studentgroup-base-color);
+}
+
+.externalorganisation-box {
+  @include my-service-box($externalorganisation-base-color);
+}

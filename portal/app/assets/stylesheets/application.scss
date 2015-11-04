@@ -2,9 +2,9 @@
 @import "mixins";
 @import "foundation_and_overrides";
 @import "foundation-icons/foundation-icons";
-@import "service_types";
 @import "services";
 @import "users";
+@import "service_types";
 
 .width-100 {
   width: 100%;
@@ -57,57 +57,4 @@
   padding: 0;
   background-position: center;
   background-size: cover;
-}
-
-@mixin box-background-with-image($background-img-url) {
-  background-image: url($background-img-url);
-  position: relative;
-}
-
-@mixin box-in-center($box-color, $box-opacity, $box-padding-tb, $box-padding-lr) {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);  
-  transform: translate(-50%, -50%);
-  text-align: center;
-  background-color: rgba($box-color, $box-opacity);
-  padding: $box-padding-tb $box-padding-lr;
-}
-
-#homepage-banner-img {
-  @include box-background-with-image("wovenportico.jpg");
-
-  #homepage-title {
-    $box-opacity-homepage-title: 0.6;
-    $box-padding-tb: 20px;
-    $box-padding-lr: 30px;
-
-    @include box-in-center($white, $box-opacity-homepage-title, $box-padding-tb, $box-padding-lr);
-  }
-
-}
-
-@mixin my-service-box($service-box-color) { 
-  background-color: rgba($service-box-color, 0.6);
-  border-width: 2px;
-  border-style: solid;
-  border-color: $service-box-color;
-  // radius(10px);
-}
-
-.university-box {
-  @include my-service-box($university-base-color);
-}
-
-.union-box {
-  @include my-service-box($union-base-color);
-}
-
-.studentgroup-box {
-  @include my-service-box($studentgroup-base-color);
-}
-
-.externalorganisation-box {
-  @include my-service-box($externalorganisation-base-color);
 }
