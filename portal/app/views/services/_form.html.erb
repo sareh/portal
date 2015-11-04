@@ -28,17 +28,17 @@
         <%= f.text_area :description %>
       </div>
       <div class="field">
+        <%= f.label :service_type_id %><br>
+        <%= f.collection_select :service_type_id, ServiceType.all, :id, :name,
+        {:prompt => 'Please select one!'} %>
+      </div>
+      <div class="field">
         <%= f.label :tags %><br>
         <%= f.collection_check_boxes :tag_ids, Service.unique_sorted_tags, :id, :name %>
       </div>
       <div class="field">
         <%= f.label :image %><br>
         <%= f.text_field :image %>
-      </div>
-      <div class="field">
-        <%= f.label :service_type_id %><br>
-        <%= f.collection_select :service_type_id, ServiceType.all, :id, :name,
-        {:prompt => 'Please select one!'} %>
       </div>
     </div>
   </section>
