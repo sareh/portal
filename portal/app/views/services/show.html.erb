@@ -1,34 +1,44 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @service.name %>
-</p>
+<h2 class="page-heading"><i class="<%= @service.service_type.icon %>"></i><%= @service.name %></h2>
 
-<p>
-  <strong>Image:</strong>
-  <%= @service.image %>
-</p>
+<% if notice %>
+  <section class="row">
+    <p id="notice" class="small-12 columns"><%= notice %></p>
+  </section>
+<% end %>
 
-<p>
-  <strong>Url:</strong>
-  <%= @service.url %>
-</p>
+<section class="row">  
+  <% if @service.image != "" %>      
+    <div class="image-container small-12 medium-8 medium-offset-2 medium-centered columns padding-0 margin-0">
+      <%= image_tag @service.image, alt: "Image representing #{@service.name}", class: "width-100" %>
+    </div>
+  <% end %>
+</section>
 
-<p>
-  <strong>Description:</strong>
-  <%= @service.description %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @service.user %>
-</p>
-
-<p>
-  <strong>Service type:</strong>
-  <%= @service.service_type %>
-</p>
-
-<%= link_to 'Edit', edit_service_path(@service) %> |
-<%= link_to 'Back', services_path %>
+  <ul class="no-bullet">
+    <section class="row">  
+      <div class="small-12 medium-8 medium-centered columns">
+        <li class="link"><%= link_to @service.url, @service.url %></li>
+        <li class="description"><%= @service.description %></li>
+        <li><%= @service.service_type.name %></li>
+        <li><cite>Added by <%= @service.user.username %> <%= distance_of_time_in_words(@service.created_at, Time.now) %> ago </cite></li>
+      </div>
+    </section>
+    <section class="row">
+      <div class="small-12 small-block-grid-1 small-centered medium-8 medium-centered columns">
+        <% @service.tag_list.each do |tag| %>
+          <%= link_to(services_path) do %>
+            <li class="button tag small-centered"><%= tag %></li>
+          <% end %>
+        <% end %>
+      </div>
+    </section>
+  </ul>
+<section class="row">
+  <div class="small-8 small-centered text-center medium-8 columns">
+    <% if user_signed_in? %>
+      <%= link_to 'Edit', edit_service_path(@service), class: "button"%>
+      <%= link_to 'Delete', @service, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %>
+    <% end %>
+  </div>
+</section>
