@@ -1,0 +1,24 @@
+
+<ul class="row">
+  <div class="small-block-grid-1 small-centered medium-block-grid-3 columns">
+    <% @services.each do |service| %>
+      <li class="<%= service.service_type.name.downcase.gsub(/\s+/, "") %>-box">
+        <ul class="no-bullet">
+          <li><i class="<%= service.service_type.icon %> font-size-1-5em margin-right-10"></i><%= link_to service.name, service, class: "font-size-2em" %></li>
+          <li><%= service.service_type.name %></li>
+          <li><%= truncate(service.description)%></li>
+          <li>
+              <% service.tags.each do |tag| %>
+                <%= link_to tag, services_path(tags:tag.name), class: "button tag" %>
+              <% end %>
+          </li>
+        </ul>
+      </li>
+    <% end %>
+  </div>
+</ul>
+
+<div class="row">
+  <p class="small-12 text-center columns">Do you think this site is missing an important service? You can <%= link_to 'add a service here', new_service_path %>. 
+  </p>
+</div>
