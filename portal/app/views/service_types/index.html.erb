@@ -1,29 +1,27 @@
-<p id="notice"><%= notice %></p>
+<section class="row">
+  <h2 class="small-12 text-center columns page-heading">Service Types</h2>
+  <p id="notice" class="small-12 text-center columns"><%= notice %></p>
+</section>
 
-<h1>Listing Service Types</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Icon</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<ul class="row">
+  <div class="small-block-grid-2 medium-block-grid-4 columns">
     <% @service_types.each do |service_type| %>
-      <tr>
-        <td><%= service_type.name %></td>
-        <td><%= service_type.icon %></td>
-        <td><%= link_to 'Show', service_type %></td>
-        <td><%= link_to 'Edit', edit_service_type_path(service_type) %></td>
-        <td><%= link_to 'Destroy', service_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <li>
+        <ul class="no-bullet text-center">
+          <li><%= link_to(service_type) do %>
+                <i class="<%= service_type.icon %> large-icon"></i>
+              <% end %>
+          </li>
+          <li><%= link_to service_type.name, service_type %></li>
+          <li><%= link_to 'Edit', edit_service_type_path(service_type), class: "button" %></li>
+          <li><%= link_to 'Destroy', service_type, method: :delete, data: { confirm: 'Are you sure?' }, class: "button" %></li>
+        </ul>
+      </li>
+    <% end %>  
+  </div>
+</ul>
 
-<br>
-
-<%= link_to 'New Service type', new_service_type_path %>
+<div class="row">
+  <p class="small-12 text-center columns">Do you think this site is missing an important service type? You can <%= link_to 'add a service type here', new_service_type_path %>. 
+  </p>
+</div>
