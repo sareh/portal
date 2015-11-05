@@ -8,7 +8,11 @@ class ServicesController < ApplicationController
 
     if params[:tags].present?
       @services = Service.tagged_with(params[:tags])
-    elsif params[:q] != ""
+    else
+      @services = Service.all
+    end
+
+    if params[:q] != ""
       @q = Service.ransack(params[:q])
       @services = @q.result(distinct: true)
     else
