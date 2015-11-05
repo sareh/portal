@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'cancancan', '~> 1.10'
 gem 'fog', '~> 1.35'
 gem 'fog-aws', '~> 0.7.6'
 gem 'ransack', '~> 1.7'
