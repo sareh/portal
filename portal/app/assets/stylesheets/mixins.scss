@@ -35,3 +35,12 @@
   border-radius: 50px;
   background-color: $portal-primary;
 }
+
+@mixin action-button-base {
+  @include button;
+  // margin: 0;
+  // padding: 1em;
+  // font-size: 1em;
+  // border-radius: 50px;
+  background-color: $portal-primary;
+}
