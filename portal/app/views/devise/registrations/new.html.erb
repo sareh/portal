@@ -24,17 +24,15 @@
         <%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
       </div>
-
+  
+      <div class="actions text-center">
+        <%= f.submit "Sign up", class: "action-button" %>
+      </div>
     </div>
   </section>
-  <section class="row">  
-    <div class="actions small-12 text-center columns">
-      <%= f.submit "Sign up", class: "button" %>
-    </div>
-  </section>
-  <% end %>
-  <section class="row"> 
-    <div class="small-12 text-center columns">
+  <% end %> 
+  <section>
+    <div class="small-12 medium-8 medium-centered text-center columns">
       <%= render "devise/shared/links" %>
     </div>
   </section>

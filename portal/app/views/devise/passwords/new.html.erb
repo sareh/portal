@@ -14,11 +14,13 @@
       <div class="actions text-center">
         <%= f.submit "Send me reset password instructions", class: "action-button" %>
       </div>
-      
-      <div class="text-center">
-        <%= render "devise/shared/links" %>
-      </div>
 
     </div>
   </section>
 <% end %>
+
+<section>
+  <div class="small-12 medium-8 medium-centered text-center columns">
+    <%= render "devise/shared/links" %>
+  </div>
+</section>
