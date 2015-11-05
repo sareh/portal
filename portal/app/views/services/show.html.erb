@@ -1,5 +1,5 @@
 
-<h2 class="page-heading"><i class="<%= @service.service_type.icon %>"></i><%= @service.name %></h2>
+<h2 class="page-heading"><%= @service.name %></h2>
 
 <% if notice %>
   <section class="row">
@@ -14,13 +14,13 @@
     </div>
   <% end %>
 </section>
-
-  <ul class="no-bullet">
+<article id="service-show-container">
+  <ul class="no-bullet service-box <%= @service.service_type.name.downcase.gsub(/\s+/, "") %>-box">
     <section class="row">  
       <div class="small-12 medium-8 medium-centered columns">
         <li id="service-link"><%= link_to @service.url, @service.url %></li>
         <li id="service-description"><%= @service.description %></li>
-        <li id="service-type"><i class="<%= @service.service_type.icon %> inline-icon"></i><%= @service.service_type.name %></li>
+        <li id="service-type"><div class="service-type-icon"><i class="<%= @service.service_type.icon %>"></i></div><%= @service.service_type.name %></li>
         <li id="service-cite"><cite>Added by <%= @service.user.username %> <%= distance_of_time_in_words(@service.created_at, Time.now) %> ago </cite></li>
       </div>
     </section>
@@ -32,11 +32,12 @@
       </div>
     </section>
   </ul>
-<section class="row">
-  <div class="small-8 small-centered text-center medium-8 columns">
-    <% if user_signed_in? %>
-      <%= link_to 'Edit', edit_service_path(@service), class: "action-button"%>
-      <%= link_to 'Delete', @service, method: :delete, data: { confirm: 'Are you sure?' }, class: "action-button" %>
-    <% end %>
-  </div>
-</section>
+  <section id="edit-and-delete" class="row">
+    <div class="small-8 small-centered text-center medium-8 columns">
+      <% if user_signed_in? %>
+        <%= link_to 'Edit', edit_service_path(@service), class: "action-button"%>
+        <%= link_to 'Delete', @service, method: :delete, data: { confirm: 'Are you sure?' }, class: "action-button" %>
+      <% end %>
+    </div>
+  </section>
+</article>
