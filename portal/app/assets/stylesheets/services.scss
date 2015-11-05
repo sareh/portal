@@ -87,78 +87,8 @@ ul#services-index-container {
   }
 }
 
-// @mixin service-box-base {
-//   margin: 0;
-//   padding: 0 10px;
-//   border-width: 2px;
-//   border-style: solid;
-//   // radius(10px);
-// }
-
-// @mixin service-box-style($service-box-color) { 
-//   background-color: rgba($service-box-color, 0.6);
-//   border-color: $service-box-color;
-// }
-
-// @mixin tag-button-base {
-//   @include button;
-//   margin: 10px;
-//   font-size: 1.2em;
-//   // border-radius: 0.5em;
-// }
-
-// .services-box {
-//   @include service-box-base;
-
-//   .tag {
-//     @include tag-button-base;
-//   }
-// }
-
-// .university-box {
-//   @include service-box-style($university-base-color);
-// }
-
-// .union-box {
-//   @include service-box-style($union-base-color);
-// }
-
-// .studentgroup-box {
-//   @include service-box-style($studentgroup-base-color);
-// }
-
-// .externalorganisation-box {
-//   @include service-box-style($externalorganisation-base-color);
-// }
-
-
-// $active: true;
-
-// .tag {
-  
-//   $button-small: em-calc(9);
-//   $tag-button-padding: $button-small;
-//   $tag-button-bg: $portal-orange;
-//   $tag-button-radius: em-calc(15);
-//   $tag-button-full-width: false;
-//   $tag-button-disabled: false;
-//   $tag-button-is-input: false;
-
-//   // @include button($tag-button-padding, $tag-button-bg, $tag-button-radius, $tag-button-full-width, $tag-button-disabled, $tag-button-is-input);
-//   // @include button-base;
-//   // @include button-size($tag-button-padding, $tag-button-full-width, $tag-button-is-input);
-//   // @include button-style;
-//   // @include radius;
-//   // @include single-transition;
-//   // @include inset-shadow($active);
-// }
-
 .action-button {
   @include button;
-}
-
-img {
-
 }
 
 .inline-icon {
