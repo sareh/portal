@@ -5,6 +5,12 @@ class ApplicationController < ActionController::Base
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
+  before_filter :set_search
+
+  def set_search
+    @q = Service.ransack(params[:q])
+  end
+
     protected
       # my custom fields are :username, :role
       def configure_permitted_parameters
