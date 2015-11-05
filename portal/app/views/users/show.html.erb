@@ -1,11 +1,33 @@
-<p id="notice"><%= notice %></p>
+<h2 class="page-heading">My Profile</h2>
 
-<ul>
-  <li class="strong">Name:</li>
-  <li><%= @user.username %></li>
-  <li class="strong">Role:</li>
-  <li><%= @user.role %></li>
-</ul>
-<% if current_user.id == @user.id %>
-  <%= link_to 'Edit', edit_user_path(@user) %>
+<% if notice %>
+  <section class="row">
+    <p id="notice" class="small-12 small-centered medium-8 columns"><%= notice %></p>
+  </section>
 <% end %>
+
+<article class="row">
+  <div class="small-12 medium-4 medium-centered columns">
+    <ul id="user-details" class="no-bullet">
+      <li>
+        <span>Username</span> <%= @user.username %>
+      </li>    
+      <li>
+        <span>Email address</span> <%= @user.email %>
+      </li>
+      <li>
+        <span>User type</span> <%= @user.role %>
+      </li>
+      <li>
+        You joined Portal <%= distance_of_time_in_words(@user.created_at, Time.now) %> ago!
+      </li>
+    </ul>
+  </div>
+  <div class="small-12 medium-8 medium-centered text-center columns">
+    <% if current_user.id == @user.id %>
+      <%= link_to 'Edit', edit_user_path(@user), class: "action-button" %>
+      <%= link_to 'Delete', @user, method: :delete, data: { confirm: 'Deleting your profile is permanent. Are you sure you want to delete it?' }, class: "action-button" %>
+    <% end %>
+  </div>
+</article>
+
