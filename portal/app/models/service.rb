@@ -14,6 +14,7 @@ class Service < ActiveRecord::Base
   def self.unique_tags
     Tag.all.uniq
   end
+  
   def self.unique_sorted_tags
     Tag.all.uniq.sort
   end
