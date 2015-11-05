@@ -5,24 +5,20 @@ class ServicesController < ApplicationController
   # GET /services
   # GET /services.json
   def index 
-
     if params[:tags].present?
       @services = Service.tagged_with(params[:tags])
-    else
-      @services = Service.all
+      return render :index
     end
 
-    if params[:q] != ""
+    if params[:q].present?
       @q = Service.ransack(params[:q])
-      @services = @q.result(distinct: true)
 
-      if params[:tags].present?
-        @services = Service.tagged_with(params[:tags])
-      end
+      @tag_search = Service.tagged_with(params[:q][:name_or_description_cont])
+      @services   = @q.result(distinct: true)
+      @services   = (@services + @tag_search).uniq
     else
       @services = Service.all
     end
-
   end
   
   # GET /services/1
