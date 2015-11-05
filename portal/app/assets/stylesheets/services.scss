@@ -14,6 +14,14 @@
   }
 }
 
+.search {
+  #search {
+  }
+  .action-button {
+    @include action-button-base;
+  }
+}
+
 ul#services-index-container {
 
   .service-box {
@@ -21,11 +29,7 @@ ul#services-index-container {
     .service-heading {
       font-size: 1.5em;
       .service-type-icon {
-        display: inline;
-        background-color: $portal-primary;
-        border-radius: 50%;
-        padding: 0.2em 0.5em;
-        margin-right: 1em;
+        @include service-type-icon;
       }
     }
     
@@ -88,8 +92,57 @@ ul#services-index-container {
 }
 
 article#service-show-container {
-  .tag {
-    @include tag-button-base;
+  .service-box{
+
+    #service-link,
+    #service-description,
+    #service-type,
+    #service-cite {
+      margin: 1em;
+      text-align: center;
+    }
+    
+    #service-link {
+      font-size: 2em;
+    }
+
+    #service-description {
+      text-align: left;
+    }
+
+    .service-type-icon {
+      @include service-type-icon;
+    }
+    .tag {
+      @include tag-button-base;
+    }
+
+
+  }
+  .service-box.university-box{
+    // #service-link {
+    //   a {
+    //     color: $university-light-color;
+    //   }
+    // }
+    i {
+      color: $university-light-color;
+    }
+  }
+  .service-box.union-box{
+    i {
+      color: $union-light-color;
+    }
+  }
+  .service-box.studentgroup-box{
+    i {
+      color: $studentgroup-light-color;
+    }
+  }
+  .service-box.externalorganisation-box{
+    i {
+      color: $externalorganisation-light-color;
+    }
   }
   .action-button {
     @include action-button-base;
