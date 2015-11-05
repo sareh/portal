@@ -19,9 +19,9 @@ u_student1 = User.create!(email: "z1234@ucl.ac.uk", username: "zaraabdul", passw
 u_admin1 = User.create!(email: "portal-admin-1@ucl.ac.uk", username: "firstadmin", password: "password", password_confirmation: "password", role: "admin")
 
 # Services
-s1 = Service.create!(name: "Student Psychological Services", image: "Polar-bear-getting-out-of-bed.gif", url: "http://www.ucl.ac.uk/student-psychological-services", description: "The UCL Student Psychological Services provides students who are facing emotional and psychological problems an accessible and effective professional resource.", user_id: u_staff1.id, service_type_id: st_uni.id)
+s1 = Service.create!(name: "Student Psychological Services", image: File.open(File.join(Rails.root, '/app/assets/images/ucl-student-psychological-services.png')), url: "http://www.ucl.ac.uk/student-psychological-services", description: "The UCL Student Psychological Services provides students who are facing emotional and psychological problems an accessible and effective professional resource.", user_id: u_staff1.id, service_type_id: st_uni.id)
 
-s2 = u_admin1.services.create!(name: "Gower Place Practice", image: "Polar-bear-getting-out-of-bed.gif", url: "http://www.gowerplacepractice.nhs.uk/", description: "We are based on the campus of University college London.
+s2 = u_admin1.services.create!(name: "Gower Place Practice", image: File.open(File.join(Rails.root, '/app/assets/images/gowerplacepractice.png')), url: "http://www.gowerplacepractice.nhs.uk/", description: "We are the local GP (General Practitioners). We are based on the campus of University college London.
 
   You can book and cancel appointments, order repeat prescriptions and view a summary of your medical record (including medications, immunisations and allergies). You can also update your personal contact details.
 
