@@ -46,7 +46,7 @@ ul#services-index-container {
     a img {
         border: none; 
     }
-    // .service-name,
+
     .service-type-name,
     .service-description {
       margin: 0.5em;
@@ -61,34 +61,39 @@ ul#services-index-container {
     @include service-box-style($university-base-color);
 
     i {
-      color: $university-base-color;
+      color: $university-light-color;
     }
   }
   .service-box.union-box{
     @include service-box-style($union-base-color);
 
     i {
-      color: $union-base-color;
+      color: $union-light-color;
     }
   }
   .service-box.studentgroup-box{
     @include service-box-style($studentgroup-base-color);
 
     i {
-      color: $studentgroup-base-color;
+      color: $studentgroup-light-color;
     }
   }
   .service-box.externalorganisation-box{
     @include service-box-style($externalorganisation-base-color);
 
     i {
-      color: $externalorganisation-base-color;
+      color: $externalorganisation-light-color;
     }
   }
 }
 
-.action-button {
-  @include button;
+article#service-show-container {
+  .tag {
+    @include tag-button-base;
+  }
+  .action-button {
+    @include action-button-base;
+  }
 }
 
 .inline-icon {
