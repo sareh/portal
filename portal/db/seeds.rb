@@ -1,3 +1,7 @@
+Service.destroy_all
+User.destroy_all
+ServiceType.destroy_all
+Tag.destroy_all
 
 # Tags
 Tag::TAGS.each do |name|
@@ -29,8 +33,6 @@ s2 = u_admin1.services.create!(name: "Gower Place Practice", image: File.open(Fi
 
 s1.tag_list = "mental health"
 s1.save
-s1.reload!
 
 s2.tag_list = "physical health"
 s2.save
-s2.reload!

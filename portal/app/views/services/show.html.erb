@@ -34,8 +34,10 @@
   </ul>
   <section id="edit-and-delete" class="row">
     <div class="small-8 small-centered text-center medium-8 columns">
-      <% if user_signed_in? %>
+      <% if can? :update, @service %>
         <%= link_to 'Edit', edit_service_path(@service), class: "action-button"%>
+      <% end %>
+      <% if can? :update, @service %>
         <%= link_to 'Delete', @service, method: :delete, data: { confirm: 'Are you sure?' }, class: "action-button" %>
       <% end %>
     </div>
