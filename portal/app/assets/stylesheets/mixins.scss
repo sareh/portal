@@ -15,13 +15,16 @@
 }
 
 @mixin service-box-base {
-  border-radius: 0.5em;
+  // border-radius: 0.5em;
   padding: 0.5em 1em;
+  border-radius: 50px;
+  border-width: 5px;
+  border-style: solid;
 }
 
 @mixin service-box-style($service-box-color) { 
-  background-color: rgba($service-box-color, 0.6);
   border-color: $service-box-color;
+  background-color: rgba($service-box-color, 0.3);
 }
 
 @mixin tag-button-base {
