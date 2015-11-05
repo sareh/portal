@@ -1,12 +1,13 @@
 
-<ul class="row">
+<ul id="services-index-container" class="row">
   <div class="small-block-grid-1 small-centered medium-block-grid-3 columns">
     <% @services.each do |service| %>
-      <li class="<%= service.service_type.name.downcase.gsub(/\s+/, "") %>-box">
+      <li class="service-box <%= service.service_type.name.downcase.gsub(/\s+/, "") %>-box">
         <ul class="no-bullet">
-          <li><i class="<%= service.service_type.icon %> font-size-1-5em margin-right-10"></i><%= link_to service.name, service, class: "font-size-2em" %></li>
-          <li><%= service.service_type.name %></li>
-          <li><%= truncate(service.description)%></li>
+          <li class="service-heading">
+            <div class="service-type-icon"><i class="<%= service.service_type.icon %>"></i></div><%= link_to service.name, service %></li>
+          <li class="service-type-name"><%= service.service_type.name%></li>
+          <li class="service-description"><%= truncate(service.description, length: 100) %></li>
           <li>
               <% service.tags.each do |tag| %>
                 <%= link_to tag, services_path(tags:tag.name), class: "tag" %>
