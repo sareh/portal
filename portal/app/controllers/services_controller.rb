@@ -5,13 +5,18 @@ class ServicesController < ApplicationController
   # GET /services
   # GET /services.json
   def index 
+
     if params[:tags].present?
       @services = Service.tagged_with(params[:tags])
+    elsif params[:q] != ""
+      @q = Service.ransack(params[:q])
+      @services = @q.result(distinct: true)
     else
       @services = Service.all
     end
-  end
 
+  end
+  
   # GET /services/1
   # GET /services/1.json
   def show
