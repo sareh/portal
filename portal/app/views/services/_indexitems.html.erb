@@ -9,7 +9,7 @@
           <li><%= truncate(service.description)%></li>
           <li>
               <% service.tags.each do |tag| %>
-                <%= link_to tag, services_path(tags:tag.name), class: "button tag" %>
+                <%= link_to tag, services_path(tags:tag.name), class: "tag" %>
               <% end %>
           </li>
         </ul>
