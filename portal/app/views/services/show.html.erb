@@ -8,9 +8,9 @@
 <% end %>
 
 <section class="row">  
-  <% if @service.image != "" %>
-    <div class="image-container small-12 medium-8 medium-offset-2 medium-centered columns padding-0 margin-0">
-      <%= image_tag @service.image, alt: "Image representing #{@service.name}", class: "width-100" %>
+  <% if @service.image %>
+    <div class="service-image-container small-12 small-centered medium-8 text-center columns">
+      <%= image_tag @service.image, alt: "Image representing #{@service.name}" %>
     </div>
   <% end %>
 </section>
