@@ -1,8 +1,4 @@
-<div id="homepage-banner-img" class="full-width-banner">
-  <div id="homepage-title" class="radius">
-    <h2>Services</h2>
-  </div>
-</div>
+
 <section class="row">
   <p id="notice" class="small-12 text-center columns"><%= notice %></p>
 </section>
@@ -14,13 +10,5 @@
   </p>
 <% end %>
 
-  <%= search_form_for(@q) do |f| %>
-    <section class="row search">
-      <div class="small-12 medium-8 medium-centered text-center columns">
-        <%= f.search_field :name_or_description_cont, placeholder: "Search" %>
-        <%= f.submit "Search", class: "action-button" %>
-      </div>
-    </section>
-  <% end %>
 
 <%= render 'indexitems' %>
