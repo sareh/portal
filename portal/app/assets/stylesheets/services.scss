@@ -1,26 +1,3 @@
-#homepage-banner-img {
-  @include box-background-with-image("uclatnight.jpg");
-
-  #homepage-title {
-    $box-opacity-homepage-title: 0.6;
-    $box-padding-tb: 20px;
-    $box-padding-lr: 30px;
-
-    @include box-in-center($black, $box-opacity-homepage-title, $box-padding-tb, $box-padding-lr);
-    
-    h2 {
-      color: $white;
-    }
-  }
-}
-
-.search {
-  #search {
-  }
-  .action-button {
-    @include action-button-base;
-  }
-}
 
 ul#services-index-container {
 

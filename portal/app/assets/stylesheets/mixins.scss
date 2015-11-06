@@ -3,19 +3,20 @@
   position: relative;
 }
 
-@mixin box-in-center($box-color, $box-opacity, $box-padding-tb, $box-padding-lr) {
+@mixin box-in-center($box-color, $box-opacity, $box-padding-tb, $box-padding-lr, $box-width, $top) {
   position: absolute;
-  top: 50%;
+  top: $top;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);  
   transform: translate(-50%, -50%);
   text-align: center;
   background-color: rgba($box-color, $box-opacity);
   padding: $box-padding-tb $box-padding-lr;
+  width: $box-width;
 }
 
 @mixin service-box-base {
-  // border-radius: 0.5em;
+  // border-radius: 50px; //0.5em;
   padding: 0.5em 1em;
   border-radius: 50px;
   border-width: 5px;
@@ -38,10 +39,6 @@
 
 @mixin action-button-base {
   @include button;
-  // margin: 0;
-  // padding: 1em;
-  // font-size: 1em;
-  // border-radius: 50px;
   background-color: $portal-primary;
 }
 
@@ -51,4 +48,10 @@
   border-radius: 50%;
   padding: 0.2em 0.5em;
   margin-right: 1em;
+}
+
+@mixin portal-font($color) {
+  color: $color;
+  letter-spacing: -2px;
+  font-weight: bold;
 }

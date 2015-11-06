@@ -7,6 +7,124 @@
 @import "users";
 @import "service_types";
 
+header {
+
+  #homepage-banner-img {
+    @include box-background-with-image("uclatnight.jpg");
+    
+    nav.top-bar {
+      background-color: transparent;
+
+      ul.title-area {
+        li.name {
+          h1#app-name {
+            font-size: $header-font-size;
+            // margin: 0;
+            // padding: 0;
+            @include portal-font($white);
+          }
+        }
+        li.toggle-topbar.menu-icon {
+
+        }
+      }
+
+      section.top-bar-section {
+        background-color: transparent !important; 
+
+        li { 
+          background-color: transparent !important;
+
+          a { 
+            background-color: transparent !important;  
+            font-size: $header-font-size;
+          }
+        } 
+      }
+    } //End of nav top-bar
+
+    #homepage-title {
+      $top: 30%;
+      $box-color: $black;
+      $box-opacity: 0.6;
+      $box-padding-tb: 20px;
+      $box-padding-lr: 30px;
+      $box-width: 260px;  
+      
+      position: absolute;
+      top: $top;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);  
+      transform: translate(-50%, -50%);
+      text-align: center;
+      background-color: rgba($box-color, $box-opacity);
+      padding: $box-padding-tb $box-padding-lr;
+      border-radius: $header-border-radius;
+      margin: 0;
+
+      h2 {
+        margin: 0;
+        @include portal-font($white);
+        a {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+.full-width-banner#homepage-banner-img {
+
+  min-width: 100%;
+  height: 400px;
+  padding: 0;
+  background-position: center;
+  background-size: cover;
+
+  #homepage-title.radius{
+    h2 {
+
+    }
+  }
+
+  #homepage-search.radius {
+
+    $top: 70%;
+    $box-color: $black;
+    $box-opacity: 0.6;
+    $box-padding-tb: 20px;
+    $box-padding-lr: 30px;
+    $box-width: 260px;
+
+    //The following two are experimental
+    $search-field-width: 500px;
+    $box-width: $search-field-width + 20px;
+    
+    position: absolute;
+    top: $top;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);  
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba($box-color, $box-opacity);
+    padding: $box-padding-tb $box-padding-lr;
+    border-radius: $header-border-radius;
+    margin: 0;
+    width: $box-width;
+
+    section.row.search {
+      #search-field {
+        // width: $search-field-width;
+        font-size: $header-font-size;
+        border-radius: $header-border-radius;
+      }
+      #search-button.action-button {
+        @include action-button-base;
+        border-radius: $header-border-radius;
+      }
+    }
+  }
+}
+
 .page-heading {
   margin: 1em auto;
   padding: 0;
@@ -24,14 +142,6 @@
   radius: 50%;
   padding: .2em .4em;
   margin-right: 0.8rem;
-}
-
-.full-width-banner {
-  min-width: 100%;
-  height: 400px;
-  padding: 0;
-  background-position: center;
-  background-size: cover;
 }
 
 .width-100 {
