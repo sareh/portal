@@ -25,8 +25,7 @@
   </div>
   <div class="small-12 medium-8 medium-centered text-center columns">
     <% if current_user.id == @user.id %>
-      <%= link_to 'Edit', edit_user_path(@user), class: "action-button" %>
-      <%= link_to 'Delete', @user, method: :delete, data: { confirm: 'Deleting your profile is permanent. Are you sure you want to delete it?' }, class: "action-button" %>
+      <%= link_to 'Edit', edit_user_registration_path, class: "action-button" %>
     <% end %>
   </div>
 </article>
