@@ -13,6 +13,17 @@
       </div>
 
       <div class="field">
+        <%= f.label :username %><br />
+        <%= f.email_field :username, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :role %><br>
+        <%= f.collection_select :role, ROLES, :id, :name,
+        {:prompt => 'Are you a student or a staff member?'} %>
+      </div>
+
+      <div class="field">
         <%= f.label :password %>
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
