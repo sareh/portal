@@ -64,13 +64,10 @@ It is my second project during [General Assembly's Web Development Immersive](ht
 It is important to me to think about the accessibility of my site. I want to make it accessible to all students, not just a majority of them.
 
 - Think about screen-readers, but also: What happens if you have a patchy internet connection? Images don't fully load?
-  - `<%= image_tag(@service.image, alt: "Image representing #{@service.name}") %> `
-
-  [http://www.webcredible.com/blog/writing-effective-alt-text-images/](http://www.webcredible.com/blog/writing-effective-alt-text-images/)
+  - `<%= image_tag(@service.image, alt: "Image representing #{@service.name}") %> ` [http://www.webcredible.com/blog/writing-effective-alt-text-images/](http://www.webcredible.com/blog/writing-effective-alt-text-images/)
 
 - Using Aria-labels 
-  - e.g. `<button aria-label="close">&times;</button>` 
-  [https://dev.opera.com/articles/ux-accessibility-aria-label/](https://dev.opera.com/articles/ux-accessibility-aria-label/)
+  - e.g. `<button aria-label="close">&times;</button>` [https://dev.opera.com/articles/ux-accessibility-aria-label/](https://dev.opera.com/articles/ux-accessibility-aria-label/)
 
 ## Extensions
 

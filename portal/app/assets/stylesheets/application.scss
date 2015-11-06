@@ -86,7 +86,7 @@ header {
     }
   }
 
-  #homepage-search.radius {
+  #homepage-search{
 
     $top: 70%;
     $box-color: $black;
@@ -97,7 +97,7 @@ header {
 
     //The following two are experimental
     $search-field-width: 500px;
-    $box-width: $search-field-width + 20px;
+    $box-width: $search-field-width + 80px;
     
     position: absolute;
     top: $top;
@@ -116,10 +116,12 @@ header {
         // width: $search-field-width;
         font-size: $header-font-size;
         border-radius: $header-border-radius;
+        display: inline;
       }
       #search-button.action-button {
         @include action-button-base;
         border-radius: $header-border-radius;
+        display: inline;
       }
     }
   }
