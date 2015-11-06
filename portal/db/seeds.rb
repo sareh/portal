@@ -36,3 +36,14 @@ s1.save
 
 s2.tag_list = "physical health"
 s2.save
+
+s3 = Service.create!(name: "UoL Housing", image: File.open(File.join(Rails.root, '/app/assets/images/uol-housing-services.gif')), url: "http://housing.london.ac.uk/", description: "The ULHS offers a range of services to assist and support students at contributing colleges who are looking for and living in private accommodation in London.", user_id: u_staff1.id, service_type_id: st_uni.id)
+
+s3.tag_list = "housing"
+s3.save
+
+s4 = Service.create!(name: "Crisis", image: File.open(File.join(Rails.root, '/app/assets/images/crisis.png')), url: "http://www.crisis.org.uk/", description: "Crisis is the national charity for single homeless people.", user_id: u_staff1.id, service_type_id: st_external.id)
+
+s4.tag_list = "housing"
+s4.save
+
