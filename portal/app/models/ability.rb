@@ -7,10 +7,11 @@ class Ability
       user ||= User.new # guest user (not logged in)
       if user.role == "admin"
       # if user.admin?
-        can :manage, :all
+        # can :manage, :all
+        can :manage, [User, Service, ServiceType, Tag]
       elsif user.role == "student" || user.role == "staff"
         can [:create, :read, :update], Service
-        # can :read, :all
+        can :read, ServiceType
       else
         can :read, :all
       end
