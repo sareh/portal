@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'cancancan', '~> 1.10'
 gem 'fog', '~> 1.35'
 gem 'fog-aws', '~> 0.7.6'
+gem 'fog-aliyun'
 gem 'ransack', '~> 1.7'
 gem 'rmagick', '~> 2.15', '>= 2.15.4'
 gem 'carrierwave', '~> 0.10.0'
@@ -55,3 +56,6 @@ group :development do
   gem 'spring'
 end
 
+group :production do
+  gem 'rails_12factor'
+end
