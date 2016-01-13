@@ -8,6 +8,8 @@ It has been designed and created in one week.
 
 It is my second project during [General Assembly's Web Development Immersive](https://generalassemb.ly/education/web-development-immersive) - a 12 week full stack web dev course.
 
+![Screenshot of Portal at 1400px screen width](./screenshots/Portal\ -\ screen\ width\ 1440px\ -\ Screen\ Shot\ 2015-11-06\ at\ 07.26.10.png)
+
 ## Tech used
 
 - HTML5
@@ -26,7 +28,7 @@ It is my second project during [General Assembly's Web Development Immersive](ht
 - Created site
 - Hosted uploaded images with AWS
 
-** To view the rest of this page in a slideshow, please see my ![presentation](./Presentation.odp).**
+** To view the rest of this page in a slideshow, please see my [presentation](./Presentation.odp).**
 
 ## Motivations
 
