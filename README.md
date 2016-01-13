@@ -10,6 +10,8 @@ It is my second project during [General Assembly's Web Development Immersive](ht
 
 ![Screenshot of Portal at 1400px screen width](./screenshots/Portal\ -\ screen\ width\ 1440px\ -\ Screen\ Shot\ 2015-11-06\ at\ 07.26.10.png)
 
+![Screenshot of Portal with iPhone 6 emulator](./screenshots/Portal\ -\ iPhone\ 6\ -\ emulator\ -\ screen\ only\ -\ Screen\ Shot\ 2015-11-06\ at\ 07.30.00.png)
+
 ## Tech used
 
 - HTML5
