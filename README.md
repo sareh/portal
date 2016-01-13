@@ -2,7 +2,7 @@
 
 ## Summary
 
-Portal is a site for students to find the services they need. 
+Portal is a site for students to find the services they need. You can view it [here on Heroku](https://uni-portal.herokuapp.com). 
 
 It has been designed and created in one week. 
 
@@ -12,12 +12,15 @@ It is my second project during [General Assembly's Web Development Immersive](ht
 
 ![Screenshot of Portal with iPhone 6 emulator](./screenshots/Portal\ -\ iPhone\ 6\ -\ emulator\ -\ screen\ only\ -\ Screen\ Shot\ 2015-11-06\ at\ 07.30.00.png)
 
+## Functionality
+
+Services can be found using the search bar and can be filtered by tags. If an account is created, registered users can add and update services as well. This enables crowdsourcing of services by students and staff of the university.
+
 ## Tech used
 
-- HTML5
-- CSS3, Sass and [Foundation](http://foundation.zurb.com/)
-- Ruby on Rails
-- Amazon Web Services (AWS)
+- HTML5, CSS3, Sass and [Foundation](http://foundation.zurb.com/) CSS framework for the front-end
+- Ruby on Rails for the back-end, creating a RESTful API that is consumed by the front-end, and linking to a PostgreSQL database.
+- Amazon Web Services (AWS) for hosting the images and Heroku for the app's deployment.
 
 ## Process
 
